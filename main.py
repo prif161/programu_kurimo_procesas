@@ -1,3 +1,8 @@
+"""@package docstring
+Srautiniu duomenu analizes irankio dokumentacija.
+
+"""
+
 #!/usr/bin/env python
 import csv
 import pandas as pd
@@ -8,10 +13,6 @@ from sklearn.cluster import KMeans
 from datetime import datetime
 from itertools import zip_longest
 
-"""@package docstring
-Srautiniu duomenu analizes irankio dokumentacija.
-"""
-
 
 def get_time(row):
 
@@ -21,8 +22,6 @@ def get_time(row):
 def get_all_csv_files():
     """
     Gaunami visi '.csv' failai esantys 'duomenys' direktorijoje
-
-    :return: Rastu failu pavadinimu masyvas
     """
 
     csvFiles = [f for f in glob.glob("duomenys/*.csv")]
@@ -32,8 +31,6 @@ def get_all_csv_files():
 def get_data_filename():
     """
     Leidzia pasirinkti viena is galimu duomenu failu ir grazina pasirinkto failo pavadinima
-
-    :return: Pasirinkto failo pavadinimas
     """
 
     allCsvFiles = get_all_csv_files()
@@ -106,8 +103,6 @@ def get_file_name():
 def write_to_file(list, file_name):
     """
     Iraso duomenis i faila
-    :param list: duomenys
-    :param file_name: rezultatu failo pavadinimas
     """
 
     with open(file_name + '_1dalis.csv', 'w', newline='') as file:
@@ -150,7 +145,6 @@ def get_info(reader, file):
 def get_dates():
     """
     Gaunami datos parametrai pradinio duomenu failo paruosimui
-    :return: Masyvas ['pradzios_data', 'pabaigos_data']
     """
 
     start = input(u"Įrašykite nuo kada pradėti analizuoti: ")
@@ -163,8 +157,6 @@ def get_dates():
 def get_parameters(params):
     """
     Gaunami paramentrai pagal kurios bus analizuojami failai
-
-    :return: Pasirinktu parametru skaitiniai atitikmenys
     """
 
     headers = get_data(params)
